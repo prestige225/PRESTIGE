@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Portfolio</title>
+  <style>
+    html {
+      scroll-behavior: smooth; /* Active le défilement fluide entre les ancres */
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav {
+      background: #007bff;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      animation: slideIn 1.5s ease-in-out;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .skills span {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 5px;
+      transform: scale(0.9);
+      transition: transform 0.3s;
+    }
+    .skills span:hover {
+      transform: scale(1.1);
+    }
+    .projects .card {
+      background: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .btn:hover {
+      background: #218838;
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: white;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes slideIn {
+      from {opacity: 0; transform: translateX(-30px);}
+      to {opacity: 1; transform: translateX(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    body.dark-mode {
+      background: #1e1e1e;
+      color: #f1f1f1;
+    }
+    body.dark-mode header,
+    body.dark-mode footer {
+      background: #000;
+    }
+    body.dark-mode .projects .card {
+      background: #2c2c2c;
+      color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Bouton pour le mode sombre -->
+  <button onclick="toggleDarkMode()" style="position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 10px;">Mode sombre</button>
+
+  <!-- Navigation vers les sections -->
+  <nav>
+    <a href="#about">À propos</a>
+    <a href="#skills">Compétences</a>
+    <a href="#projects">Projets</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Afanou Comlan Emile</h1>
+    <p>Développeur Web & Mobile</p>
+  </header>
+
+  <div class="container">
+    <div id="about" class="section about">
+      <h2>A propos</h2>
+      <p>Je suis étudiant passionné par le développement web et mobile. Je construis des sites modernes, performants et sécurisés.</p>
+    </div>
+
+    <div id="skills" class="section skills">
+      <h2>Compétences</h2>
+      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>React</span><span>MySQL</span>
+    </div>
+
+    <div id="projects" class="section projects">
+      <h2>Projets</h2>
+      <div class="card">
+        <h3>Site éducatif</h3>
+        <p>Un site pour apprendre les langues en ligne avec interface moderne.</p>
+      </div>
+      <div class="card">
+        <h3>Boutique en ligne</h3>
+        <p>Une boutique éducative en HTML/CSS/JS avec panier dynamique.</p>
+      </div>
+    </div>
+
+    <div id="contact" class="section">
+      <a href="ton-cv.pdf" class="btn" download>Télécharger mon CV</a>
+      <a href="mailto:ton.email@example.com" class="btn" style="background:#007bff">Me contacter</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 - Afanou Comlan Emile
+  </footer>
+
+  <!-- Script pour le mode sombre -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
